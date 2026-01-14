@@ -145,16 +145,19 @@
                                     <?php endif; ?>
                                 </div>
                                 
+                                <?php if (isset($_SESSION['user_id'])): ?>
                                 <div class="card-footer" style="background-color: #1a242f; border-top: 1px solid #ed563b;">
                                     <button class="btn btn-sm" style="background-color: #ed563b; color: #fff; width: 100%;" 
                                             data-toggle="modal" data-target="#recipeModal<?php echo $recipe['recipe_id']; ?>">
                                         Vezi Reteta
                                     </button>
                                 </div>
+                                <?php endif; ?>
                             </div>
                         </div>
 
                         <!-- Modal detalii pentru reteta -->
+                        <?php if (isset($_SESSION['user_id'])): ?>
                         <div class="modal fade" id="recipeModal<?php echo $recipe['recipe_id']; ?>" tabindex="-1" role="dialog">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content" style="background-color: #232d39; color: #fff;">
@@ -183,6 +186,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <div class="col-lg-12 text-center">
